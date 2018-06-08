@@ -15,8 +15,8 @@ $(x1 \lor x2') \land (x2 \lor x2'))$ is encoded by
 
 # Example usage
 
-	cat cnf.json | ./cnf2dot.py - g.dot
-	dot -Tpng g.dot -o g.png
+	cat example_cnf.json | ./cnf2dot.py - example_out.dot
+	dot -Tpng example_out.dot -o example_out.png
 
 # Recommended graphviz layouts for this task
 
