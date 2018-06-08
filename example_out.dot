@@ -1,0 +1,52 @@
+graph G {
+    edge [splines = false];
+
+    subgraph cluster_0 {
+    color = blue;
+    label = "clause #0";
+    node [style = filled];
+    
+    n0_0 [label = "x1"];
+n0_1 [label = "x1"];
+n0_2 [label = "x2"];
+}
+subgraph cluster_1 {
+    color = blue;
+    label = "clause #1";
+    node [style = filled];
+    
+    n1_0 [label = "x1'"];
+n1_1 [label = "x2'"];
+n1_2 [label = "x2'"];
+}
+subgraph cluster_2 {
+    color = blue;
+    label = "clause #2";
+    node [style = filled];
+    
+    n2_0 [label = "x1'"];
+n2_1 [label = "x2"];
+n2_2 [label = "x2"];
+}
+
+    # group0 -> group1
+n0_0 -- n1_1;
+n0_0 -- n1_2;
+n0_1 -- n1_1;
+n0_1 -- n1_2;
+n0_2 -- n1_0;
+# group0 -> group2
+n0_0 -- n2_1;
+n0_0 -- n2_2;
+n0_1 -- n2_1;
+n0_1 -- n2_2;
+n0_2 -- n2_0;
+n0_2 -- n2_1;
+n0_2 -- n2_2;
+# group1 -> group2
+n1_0 -- n2_0;
+n1_0 -- n2_1;
+n1_0 -- n2_2;
+n1_1 -- n2_0;
+n1_2 -- n2_0;
+}
